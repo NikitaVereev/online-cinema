@@ -1,0 +1,17 @@
+import { FC } from 'react'
+
+import Logo from './Logo/Logo'
+import MenuContainer from './MenuContainer/MenuContainer'
+import styles from './Navigation.module.sass'
+
+const Navigation: FC = () => {
+	return (
+		<div className={styles.navigation}>
+			<Logo />
+
+			<MenuContainer />
+		</div>
+	)
+}
+
+export default Navigation
