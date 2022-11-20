@@ -1,33 +1,33 @@
 import { IMenu } from './menu.interface'
 
 export const firstMenu: IMenu = {
-	title: 'Menu',
+	title: 'Меню',
 	items: [
 		{
 			icon: 'MdHome',
-			title: 'Home',
+			title: 'Главная',
 			link: '/',
 		},
 		{
 			icon: 'MdExplore',
-			title: 'Discovery',
+			title: 'Открытия',
 			link: '/genres',
 		},
 		{
 			icon: 'MdRefresh',
-			title: 'Fresh movies',
+			title: 'Новинки',
 			link: '/fresh',
 		},
 
 		{
 			icon: 'MdLocalFireDepartment',
-			title: 'Trending now',
+			title: 'Популярные',
 			link: '/trending',
 		},
 	],
 }
 
 export const userMenu: IMenu = {
-	title: 'General',
+	title: 'Профиль',
 	items: [],
 }

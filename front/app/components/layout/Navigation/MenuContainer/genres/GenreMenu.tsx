@@ -11,7 +11,7 @@ const GenreMenu: FC = () => {
 	) : (
 		<Menu
 			menu={{
-				title: 'Popular genres',
+				title: 'Популярные жанры',
 				items: data || [],
 			}}
 		/>
