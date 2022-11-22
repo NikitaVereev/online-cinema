@@ -5,7 +5,7 @@ import '../styles/globals.sass'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<MainProvider>
+		<MainProvider Component={Component}>
 			<Component {...pageProps} />
 		</MainProvider>
 	)
