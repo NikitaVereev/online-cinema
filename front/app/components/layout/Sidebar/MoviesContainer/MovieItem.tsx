@@ -36,10 +36,10 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 						))}
 					</div>
 				</div>
-			</div>
-			<div className={styles.rating}>
-				<MaterialIcon name="MdStarRate" />
-				<span>{movie.rating.toFixed(1)}</span>
+				<div className={styles.rating}>
+					<MaterialIcon name="MdStarRate" />
+					<span>{movie.rating.toFixed(1)}</span>
+				</div>
 			</div>
 		</div>
 	)

@@ -112,7 +112,8 @@ let MovieService = class MovieService {
         return deleteDoc;
     }
     async sendNotification(dto) {
-        await this.telegramService.sendPhoto('https://images.unsplash.com/photo-1668342433263-d9669a2e3b85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+        if (process.env.NODE_ENV !== 'development')
+            await this.telegramService.sendPhoto(dto.poster);
         const msg = `<b>${dto.title}</b>`;
         await this.telegramService.sendMessage(msg, {
             reply_markup: {
