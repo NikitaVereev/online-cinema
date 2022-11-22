@@ -24,7 +24,7 @@ let RatingService = class RatingService {
         this.movieService = movieService;
     }
     async getMovieValueByUser(movieId, userId) {
-        return this.RatingModel.findOne(movieId, userId)
+        return this.RatingModel.findOne({ movieId, userId })
             .select('value')
             .exec()
             .then((data) => (data ? data.value : 0));
