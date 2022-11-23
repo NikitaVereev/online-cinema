@@ -5,7 +5,7 @@ const Favicons: FC = () => {
 		<>
 			<link
 				rel="shortcut icon"
-				href="/favicons/favicon.ico"
+				href="/favicons/apple-touch-icon.png"
 				type="image/x-icon"
 			/>
 			<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
