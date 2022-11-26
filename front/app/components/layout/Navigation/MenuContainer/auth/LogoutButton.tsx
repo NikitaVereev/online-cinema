@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 
 import { MaterialIcon } from '@/components/ui/MaterialIcon'
 
@@ -6,15 +6,17 @@ import { useActions } from '@/hooks/useActions'
 
 const LogoutButton: FC = () => {
 	const { logout } = useActions()
-	const handleLogout = (e: MouseEvent<HTMLAnchorElement>) => {
+
+	const logoutHandler = (e: MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault()
 		logout()
 	}
 
 	return (
 		<li>
-			<a onClick={handleLogout}>
-				<MaterialIcon name="MdLogout" /> <span>Выход</span>
+			<a onClick={logoutHandler}>
+				<MaterialIcon name="MdLogout" />
+				<span>Logout</span>
 			</a>
 		</li>
 	)

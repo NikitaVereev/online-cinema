@@ -6,8 +6,8 @@ import { checkAuth, login, logout, register } from './user.actions'
 import { IInitialState } from './user.interface'
 
 const initialState: IInitialState = {
-	isLoading: false,
 	user: getStoreLocal('user'),
+	isLoading: false,
 }
 
 export const userSlice = createSlice({
