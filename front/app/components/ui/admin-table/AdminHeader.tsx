@@ -3,7 +3,6 @@ import { ChangeEvent, FC } from 'react'
 import SearchField from '../searvh-field/SearchField'
 
 import AdminCreateButton from './AdminCreateButton/AdminCreateButton'
-import styles from './AdminHeader.module.sass'
 
 interface IAdminHeader {
 	onClick?: () => void
@@ -17,7 +16,7 @@ const AdminHeader: FC<IAdminHeader> = ({
 	handleSearch,
 }) => {
 	return (
-		<div className={styles.header}>
+		<div>
 			<SearchField searchTerm={searchTerm} handleSearch={handleSearch} />
 			{onClick && <AdminCreateButton onClick={onClick} />}
 		</div>
