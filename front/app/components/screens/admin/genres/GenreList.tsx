@@ -9,7 +9,7 @@ import Meta from '@/utils/meta/Meta'
 
 import { useGenres } from './useGenres'
 
-const UserList: FC = () => {
+const GenreList: FC = () => {
 	const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useGenres()
 
 	return (
@@ -27,4 +27,4 @@ const UserList: FC = () => {
 	)
 }
 
-export default UserList
+export default GenreList

@@ -1,9 +1,11 @@
 import { FC } from 'react'
 
+import GenreEdit from '@/components/screens/admin/genre/GenreEdit'
+
 import { NextPageAuth } from '@/shared/types/auth-types'
 
 const GenreEditPage: NextPageAuth = () => {
-	return <div>GenreEditPage</div>
+	return <GenreEdit />
 }
 
 GenreEditPage.isOnlyAdmin = true
