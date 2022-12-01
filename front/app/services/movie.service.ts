@@ -22,7 +22,7 @@ export const MovieService = {
 	},
 
 	async createMovie() {
-		axios.post<string>(getMoviesUrl('/'))
+		return axios.post<string>(getMoviesUrl('/'))
 	},
 
 	async updateMovie(_id: string, data: IMovieEditInput) {

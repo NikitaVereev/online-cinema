@@ -10,13 +10,27 @@ import Meta from '@/utils/meta/Meta'
 import { useMovies } from './useMovies'
 
 const UserList: FC = () => {
-	const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useMovies()
+	const {
+		handleSearch,
+		isLoading,
+		searchTerm,
+		data,
+		deleteAsync,
+		createAsync,
+	} = useMovies()
 
 	return (
-		<Meta title="Пользователи">
+		<Meta
+			title="Редактирование фильмов"
+			description="Просмотр фильмов и телевизионных программ в вашем браузере"
+		>
 			<AdminNavigation />
-			<Heading title="Пользователи" />
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<Heading title="Фильмы" />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				onClick={createAsync}
+			/>
 			<AdminTable
 				isLoading={isLoading}
 				removeHandler={deleteAsync}

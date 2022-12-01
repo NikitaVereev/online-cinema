@@ -16,7 +16,7 @@ const AdminHeader: FC<IAdminHeader> = ({
 	handleSearch,
 }) => {
 	return (
-		<div>
+		<div className="flex justify-between items-center">
 			<SearchField searchTerm={searchTerm} handleSearch={handleSearch} />
 			{onClick && <AdminCreateButton onClick={onClick} />}
 		</div>

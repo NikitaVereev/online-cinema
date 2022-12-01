@@ -22,7 +22,7 @@ const GenreList: FC = () => {
 	return (
 		<Meta title="Пользователи">
 			<AdminNavigation />
-			<Heading title="Пользователи" />
+			<Heading title="Жанры" />
 			<AdminHeader
 				handleSearch={handleSearch}
 				searchTerm={searchTerm}

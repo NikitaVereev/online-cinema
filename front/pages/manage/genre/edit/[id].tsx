@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import GenreEdit from '@/components/screens/admin/genre/GenreEdit'
 
 import { NextPageAuth } from '@/shared/types/auth-types'
