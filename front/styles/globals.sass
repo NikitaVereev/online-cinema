@@ -2,7 +2,7 @@
 @tailwind components
 @tailwind utilities
 
-@import './react-select.scss'
+@import './react-select.sass'
 
 @import url('https:/fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap')
 
@@ -13,7 +13,7 @@ body
 	padding: 0
 	margin: 0
 	font-family: 'Outfit', sans-serif
-	@apply bg-gray-900
+	@apply bg-black
 
 a
 	color: inherit
@@ -37,7 +37,16 @@ input:focus
 	width: 2px
 ::-webkit-scrollbar-thumb
 
-	
-	
-
-
+.slide-animation-enter
+	opacity: 0
+	transform: scale(0.9)
+.slide-animation-enter-active
+	opacity: 1
+	transform: translateX(0)
+	transition: 500ms
+.slide-animation-exit
+	opacity: 1
+.slide-animation-exit-active
+	opacity: 0
+	transform: scale(0.9)
+	transition: 500ms
