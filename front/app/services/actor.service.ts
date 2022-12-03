@@ -6,6 +6,7 @@ import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.int
 import { IActor } from '@/shared/types/movies.types'
 
 import { getActorsUrl } from '@/config/api.config'
+import { getActorUrl } from '@/config/url.config'
 
 export const ActorService = {
 	async getAll(searchTerm?: string) {
@@ -20,6 +21,10 @@ export const ActorService = {
 
 	async getById(_id: string) {
 		return axios.get<IActorEditInput>(getActorsUrl(`${_id}`))
+	},
+
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
 	},
 
 	async createActor() {

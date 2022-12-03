@@ -1,7 +1,9 @@
+import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
 import { useAuth } from '@/hooks/useAuth'
 
+import { getUserUrl } from '@/config/api.config'
 import { getAdminHomeUrl } from '@/config/url.config'
 
 import MenuItem from '../MenuItem'
