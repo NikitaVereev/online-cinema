@@ -67,6 +67,7 @@ let ActorService = class ActorService {
             name: '',
             slug: '',
             photo: '',
+            description: '',
         };
         const actor = await this.ActorModel.create(defaultValue);
         return actor._id;

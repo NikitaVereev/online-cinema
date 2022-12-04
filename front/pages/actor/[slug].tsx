@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
+import Actor from '@/components/ui/actor-movies/Actor'
 import Catalog from '@/components/ui/catalog-movies/Catalog'
 
 import { IActor, IMovie } from '@/shared/types/movies.types'
@@ -16,7 +17,9 @@ interface IActorPage {
 
 const ActorPage: NextPage<IActorPage> = ({ movies, actor }) => {
 	return actor ? (
-		<Catalog movies={movies || []} title={actor.name} />
+		<>
+			<Actor actor={actor} movies={movies || []} title={actor.name} />
+		</>
 	) : (
 		<Error404 />
 	)

@@ -26,5 +26,9 @@ __decorate([
     (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ActorModel.prototype, "photo", void 0);
+__decorate([
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", String)
+], ActorModel.prototype, "description", void 0);
 exports.ActorModel = ActorModel;
 //# sourceMappingURL=actor.model.js.map

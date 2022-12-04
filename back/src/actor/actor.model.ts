@@ -12,4 +12,7 @@ export class ActorModel extends TimeStamps {
 
 	@prop()
 	photo: string
+
+	@prop()
+	description: string
 }

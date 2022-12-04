@@ -64,6 +64,7 @@ export class ActorService {
 			name: '',
 			slug: '',
 			photo: '',
+			description: '',
 		}
 		const actor = await this.ActorModel.create(defaultValue)
 

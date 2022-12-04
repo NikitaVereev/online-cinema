@@ -20,6 +20,13 @@ import generateSlug from '@/utils/string/generateSlug'
 import { IActorEditInput } from './actor-edit.interface'
 import { useActorEdit } from './useActorEdit'
 
+const DynamicTextEditor = dynamic(
+	() => import('../../../ui/form-elements/TextEditor'),
+	{
+		ssr: false,
+	}
+)
+
 const ActorEdit: FC = () => {
 	const {
 		handleSubmit,
@@ -79,6 +86,28 @@ const ActorEdit: FC = () => {
 									folder="actors"
 								/>
 							)}
+						/>
+						<Controller
+							name="description"
+							control={control}
+							defaultValue=""
+							render={({
+								field: { value, onChange },
+								fieldState: { error },
+							}) => (
+								<DynamicTextEditor
+									placeholder="Описание"
+									onChange={onChange}
+									error={error}
+									value={value}
+								/>
+							)}
+							rules={{
+								validate: {
+									required: (v) =>
+										(v && stripHtml(v).result.length > 0) || 'Заполните поле!',
+								},
+							}}
 						/>
 
 						<Button>Обновить</Button>

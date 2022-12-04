@@ -5,4 +5,5 @@ export declare class ActorModel extends TimeStamps {
     name: string;
     slug: string;
     photo: string;
+    description: string;
 }

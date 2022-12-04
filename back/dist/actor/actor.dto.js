@@ -25,5 +25,9 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], ActorDto.prototype, "photo", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], ActorDto.prototype, "description", void 0);
 exports.ActorDto = ActorDto;
 //# sourceMappingURL=actor.dto.js.map

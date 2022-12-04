@@ -20,6 +20,7 @@ export interface IActor {
 	name: string
 	countMovies: number
 	slug: string
+	description: string
 }
 
 export interface IMovie {
