@@ -34,9 +34,7 @@ export declare class MovieController {
     byActor(actorId: Types.ObjectId): Promise<(import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, import("./movie.model").MovieModel> & import("./movie.model").MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: Types.ObjectId;
     }>)[]>;
-    byGenres(genreIds: string[]): Promise<(import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, import("./movie.model").MovieModel> & import("./movie.model").MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
-        _id: Types.ObjectId;
-    }>)[]>;
+    byGenres(genreIds: Types.ObjectId[]): Promise<import("@typegoose/typegoose").DocumentType<import("./movie.model").MovieModel, import("@typegoose/typegoose/lib/types").BeAnObject>[]>;
     getAll(searchTerm?: string): Promise<Omit<import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, import("./movie.model").MovieModel> & import("./movie.model").MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: Types.ObjectId;
     }>, never>[]>;

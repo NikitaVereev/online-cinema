@@ -22,7 +22,7 @@
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
-import { ModelType } from '@typegoose/typegoose/lib/types';
+import { DocumentType, ModelType } from '@typegoose/typegoose/lib/types';
 import { Types } from 'mongoose';
 import { TelegramService } from 'src/telegram/telegram.service';
 import { CreateMovieDto } from './create-movie.dto';
@@ -40,9 +40,7 @@ export declare class MovieService {
     byActor(actorId: Types.ObjectId): Promise<(import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, MovieModel> & MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: Types.ObjectId;
     }>)[]>;
-    byGenres(genreIds: string[]): Promise<(import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, MovieModel> & MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
-        _id: Types.ObjectId;
-    }>)[]>;
+    byGenres(genreIds: Types.ObjectId[]): Promise<DocumentType<MovieModel>[]>;
     updateCountOpened(slug: string): Promise<import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, MovieModel> & MovieModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: Types.ObjectId;
     }>>;

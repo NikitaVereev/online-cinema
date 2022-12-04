@@ -8,12 +8,12 @@ import { MovieService } from '@/services/movie.service'
 import { getKeys } from '@/utils/object/getKeys'
 import { toastError } from '@/utils/toast-error'
 
-import { getMovieUrl } from '@/config/url.config'
+import { getAdminUrl, getMovieUrl } from '@/config/url.config'
 
 import { IMovieEditInput } from './movie-edit.interface'
 
 export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
-	const { push, query } = useRouter()
+	const { query, push } = useRouter()
 
 	const movieId = String(query.id)
 
@@ -21,12 +21,12 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		['movie', movieId],
 		() => MovieService.getById(movieId),
 		{
-			onSuccess: ({ data }) => {
+			onSuccess({ data }) {
 				getKeys(data).forEach((key) => {
 					setValue(key, data[key])
 				})
 			},
-			onError: (error) => {
+			onError(error) {
 				toastError(error, 'Get movie')
 			},
 			enabled: !!query.id,
@@ -37,12 +37,12 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		'update movie',
 		(data: IMovieEditInput) => MovieService.updateMovie(movieId, data),
 		{
-			onSuccess: () => {
-				toastr.success('Update movie', 'update was successful')
-				push(getMovieUrl('movies'))
-			},
-			onError: (error) => {
+			onError(error) {
 				toastError(error, 'Update movie')
+			},
+			onSuccess() {
+				toastr.success('Update movie', 'update was successful')
+				push(getAdminUrl('movies'))
 			},
 		}
 	)

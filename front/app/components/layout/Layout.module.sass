@@ -3,14 +3,31 @@ $bar-width: 20%
 .layout
     @apply relative
     >div:first-child, >div:last-child
-        @apply fixed top-0 bottom-0 overflow-y-auto
+        @apply fixed top-0 bottom-0 overflow-y-auto animate-fade
         width: $bar-width
         max-width: 350px
         
     >div:first-child
-        @apply left-0 border-r border-r-gray-800
+        @apply left-0 border-r border-r-gray-800 
+        
     >div:last-child
         @apply right-0 border-l border-l-gray-800
     .center
-        @apply min-h-screen p-layout
+        @apply min-h-screen p-layout animate-fade 
         margin: 0 $bar-width
+        transition: 1s ease
+        
+        
+.layout.active 
+        .center 
+            @apply w-full mx-auto
+            transition: .5s ease
+            margin: 0 auto
+            max-width: 100vw
+            animation: scale 1s ease
+@keyframes scale
+    0%
+      max-width: 50%  
+    100%
+        max-width: 100%
+        

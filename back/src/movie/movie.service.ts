@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
-import { ModelType } from '@typegoose/typegoose/lib/types'
+import { DocumentType, ModelType } from '@typegoose/typegoose/lib/types'
 import { Types } from 'mongoose'
 import { InjectModel } from 'nestjs-typegoose'
 import { TelegramService } from 'src/telegram/telegram.service'
@@ -48,8 +48,12 @@ export class MovieService {
 		return docs
 	}
 
-	async byGenres(genreIds: string[]) {
-		const docs = await this.MovieModel.find({ $in: genreIds }).exec()
+	async byGenres(
+		genreIds: Types.ObjectId[],
+	): Promise<DocumentType<MovieModel>[]> {
+		const docs = await this.MovieModel.find({
+			genres: { $in: genreIds },
+		}).exec()
 
 		if (!docs) throw new NotFoundException('Not found movie!')
 		return docs

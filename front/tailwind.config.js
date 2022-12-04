@@ -71,7 +71,7 @@ module.exports = {
 				},
 			},
 			animation: {
-				fade: 'fade .5s ease',
+				fade: 'fade 1s ease',
 				scaleIn: 'scaleIn .5s ease',
 			},
 		},

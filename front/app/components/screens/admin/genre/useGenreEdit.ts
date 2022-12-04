@@ -8,7 +8,7 @@ import { GenreService } from '@/services/genre.service'
 import { getKeys } from '@/utils/object/getKeys'
 import { toastError } from '@/utils/toast-error'
 
-import { getActorUrl } from '@/config/url.config'
+import { getActorUrl, getAdminUrl, getGenreUrl } from '@/config/url.config'
 
 import { IGenreEditInput } from './genre-edit.interface'
 
@@ -37,12 +37,12 @@ export const useGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
 		'update genre',
 		(data: IGenreEditInput) => GenreService.updateGenre(genreId, data),
 		{
-			onSuccess: () => {
-				toastr.success('Update genre', 'update was successful')
-				push(getActorUrl('genres'))
-			},
-			onError: (error) => {
+			onError(error) {
 				toastError(error, 'Update genre')
+			},
+			onSuccess() {
+				toastr.success('Update genre', 'update was successful')
+				push(getAdminUrl('genres'))
 			},
 		}
 	)
