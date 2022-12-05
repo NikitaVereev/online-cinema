@@ -6,6 +6,8 @@ import { IMovie } from '@/shared/types/movies.types'
 
 import { getActorUrl, getGenreUrl } from '@/config/url.config'
 
+import FavoriteButton from '../FavoriteButton/FavoritBurron'
+
 import styles from './Content.module.sass'
 import ContentList from './ContentList'
 
@@ -39,6 +41,8 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 				<MaterialIcon name="MdStarRate" />
 				<span>{movie.rating.toFixed(1)}</span>
 			</div>
+
+			<FavoriteButton movieId={movie._id} />
 		</div>
 	)
 }

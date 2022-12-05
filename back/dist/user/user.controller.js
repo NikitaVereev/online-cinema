@@ -66,7 +66,7 @@ __decorate([
     (0, auth_decorator_1.Auth)(),
     __param(0, (0, user_decorator_1.User)('_id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [mongoose_1.Types.ObjectId]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "getFavorites", null);
 __decorate([

@@ -30,7 +30,7 @@ export class UserController {
 
 	@Get('profile/favorites')
 	@Auth()
-	async getFavorites(@User('_id') _id: Types.ObjectId) {
+	async getFavorites(@User('_id') _id: string) {
 		return this.userService.getFavoriteMovies(_id)
 	}
 

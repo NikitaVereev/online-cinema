@@ -41,5 +41,5 @@ export declare class UserService {
         _id: Types.ObjectId;
     }>>;
     toggleFavorite(movieId: Types.ObjectId, user: UserModel): Promise<void>;
-    getFavoriteMovies(_id: Types.ObjectId): Promise<import("@typegoose/typegoose/lib/types").Ref<import("../movie/movie.model").MovieModel, Types.ObjectId>[]>;
+    getFavoriteMovies(_id: string): Promise<import("@typegoose/typegoose/lib/types").Ref<import("../movie/movie.model").MovieModel, Types.ObjectId>[]>;
 }

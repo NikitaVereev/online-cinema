@@ -63,7 +63,7 @@ let UserService = class UserService {
         return this.UserModel.findByIdAndDelete(id).exec();
     }
     async toggleFavorite(movieId, user) {
-        const { _id, favorites } = user;
+        const { favorites, _id } = user;
         await this.UserModel.findByIdAndUpdate(_id, {
             favorites: favorites.includes(movieId)
                 ? favorites.filter((id) => String(id) !== String(movieId))
@@ -79,7 +79,9 @@ let UserService = class UserService {
             },
         })
             .exec()
-            .then((data) => data.favorites);
+            .then((data) => {
+            return data.favorites;
+        });
     }
 };
 UserService = __decorate([

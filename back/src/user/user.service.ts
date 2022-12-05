@@ -62,7 +62,7 @@ export class UserService {
 	}
 
 	async toggleFavorite(movieId: Types.ObjectId, user: UserModel) {
-		const { _id, favorites } = user
+		const { favorites, _id } = user
 
 		await this.UserModel.findByIdAndUpdate(_id, {
 			favorites: favorites.includes(movieId)
@@ -71,7 +71,7 @@ export class UserService {
 		})
 	}
 
-	async getFavoriteMovies(_id: Types.ObjectId) {
+	async getFavoriteMovies(_id: string) {
 		return this.UserModel.findById(_id, 'favorites')
 			.populate({
 				path: 'favorites',
@@ -80,6 +80,8 @@ export class UserService {
 				},
 			})
 			.exec()
-			.then((data) => data.favorites)
+			.then((data) => {
+				return data.favorites
+			})
 	}
 }
