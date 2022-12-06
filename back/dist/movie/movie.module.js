@@ -10,6 +10,7 @@ exports.MovieModule = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const telegram_module_1 = require("../telegram/telegram.module");
+const user_module_1 = require("../user/user.module");
 const movie_controller_1 = require("./movie.controller");
 const movie_model_1 = require("./movie.model");
 const movie_service_1 = require("./movie.service");
@@ -27,6 +28,7 @@ MovieModule = __decorate([
                 },
             ]),
             telegram_module_1.TelegramModule,
+            user_module_1.UserModule,
         ],
         controllers: [movie_controller_1.MovieController],
         providers: [movie_service_1.MovieService],

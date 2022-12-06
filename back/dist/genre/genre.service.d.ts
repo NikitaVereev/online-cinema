@@ -24,20 +24,21 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 import { ModelType } from '@typegoose/typegoose/lib/types';
+import { MovieService } from 'src/movie/movie.service';
 import { CreateGenreDto } from './create-genre.dto';
+import { ICollection } from './genre.interface';
 import { GenreModel } from './genre.model';
 export declare class GenreService {
     private readonly GenreModel;
-    constructor(GenreModel: ModelType<GenreModel>);
+    private readonly movieService;
+    constructor(GenreModel: ModelType<GenreModel>, movieService: MovieService);
     bySlug(slug: string): Promise<import("mongoose").Document<import("mongoose").Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & GenreModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;
     getAll(searchTerm?: string): Promise<(import("mongoose").Document<import("mongoose").Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & GenreModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>)[]>;
-    getCollections(): Promise<(import("mongoose").Document<import("mongoose").Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & GenreModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
-        _id: import("mongoose").Types.ObjectId;
-    }>)[]>;
+    getCollections(): Promise<ICollection[]>;
     byId(_id: string): Promise<import("mongoose").Document<import("mongoose").Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, GenreModel> & GenreModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>>;

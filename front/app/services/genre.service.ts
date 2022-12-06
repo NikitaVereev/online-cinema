@@ -2,6 +2,7 @@ import { axiosClassic } from 'api/interceptors'
 import axios from 'api/interceptors'
 
 import { IGenreEditInput } from '@/components/screens/admin/genre/genre-edit.interface'
+import { ICollection } from '@/components/screens/discovery/discovery.interface'
 
 import { IGenre } from '@/shared/types/movies.types'
 
@@ -27,6 +28,9 @@ export const GenreService = {
 
 	async createGenre() {
 		return axios.post<string>(getGenresUrl('/'))
+	},
+	async getDiscovery() {
+		return axiosClassic.get<ICollection>(getGenresUrl('/collections'))
 	},
 
 	async deleteGenre(_id: string) {

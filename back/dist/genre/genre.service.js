@@ -15,10 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenreService = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
+const movie_service_1 = require("../movie/movie.service");
 const genre_model_1 = require("./genre.model");
 let GenreService = class GenreService {
-    constructor(GenreModel) {
+    constructor(GenreModel, movieService) {
         this.GenreModel = GenreModel;
+        this.movieService = movieService;
     }
     async bySlug(slug) {
         const doc = await this.GenreModel.findOne({ slug }).exec();
@@ -49,7 +51,16 @@ let GenreService = class GenreService {
     }
     async getCollections() {
         const genres = await this.getAll();
-        const collections = genres;
+        const collections = await Promise.all(genres.map(async (genre) => {
+            const moviesByGenre = await this.movieService.byGenres([genre._id]);
+            const result = {
+                _id: String(genre._id),
+                image: moviesByGenre[0].bigPoster,
+                slug: genre.slug,
+                title: genre.name,
+            };
+            return result;
+        }));
         return collections;
     }
     async byId(_id) {
@@ -83,7 +94,7 @@ let GenreService = class GenreService {
 GenreService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, nestjs_typegoose_1.InjectModel)(genre_model_1.GenreModel)),
-    __metadata("design:paramtypes", [Object])
+    __metadata("design:paramtypes", [Object, movie_service_1.MovieService])
 ], GenreService);
 exports.GenreService = GenreService;
 //# sourceMappingURL=genre.service.js.map

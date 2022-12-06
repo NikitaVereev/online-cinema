@@ -53,12 +53,7 @@ let MovieService = class MovieService {
         return docs;
     }
     async byGenres(genreIds) {
-        const docs = await this.MovieModel.find({
-            genres: { $in: genreIds },
-        }).exec();
-        if (!docs)
-            throw new common_1.NotFoundException('Not found movie!');
-        return docs;
+        return this.MovieModel.find({ genres: { $in: genreIds } }).exec();
     }
     async updateCountOpened(slug) {
         return this.MovieModel.findOneAndUpdate({ slug }, { $inc: { countOpened: 1 } }).exec();

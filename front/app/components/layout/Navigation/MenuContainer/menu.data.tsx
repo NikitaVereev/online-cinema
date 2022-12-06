@@ -10,7 +10,7 @@ export const firstMenu: IMenu = {
 		},
 		{
 			icon: 'MdExplore',
-			title: 'Открытия',
+			title: 'Коллекции',
 			link: '/genres',
 		},
 		{

@@ -25,11 +25,11 @@ let GenreController = class GenreController {
     async bySlug(slug) {
         return this.genreService.bySlug(slug);
     }
-    async getCollections() {
-        return this.genreService.getCollections();
-    }
     async getAll(searchTerm) {
         return this.genreService.getAll(searchTerm);
+    }
+    async getCollections() {
+        return this.genreService.getCollections();
     }
     async get(id) {
         return this.genreService.byId(id);
@@ -52,18 +52,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], GenreController.prototype, "bySlug", null);
 __decorate([
-    (0, common_1.Get)('/collections'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], GenreController.prototype, "getCollections", null);
-__decorate([
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)('searchTerm')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], GenreController.prototype, "getAll", null);
+__decorate([
+    (0, common_1.Get)('/collections'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GenreController.prototype, "getCollections", null);
 __decorate([
     (0, common_1.Get)(':id'),
     (0, auth_decorator_1.Auth)('admin'),
