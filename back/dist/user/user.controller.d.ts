@@ -32,7 +32,7 @@ export declare class UserController {
     getProfile(_id: string): Promise<import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, UserModel> & UserModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
         _id: Types.ObjectId;
     }>>;
-    getFavorites(_id: string): Promise<import("@typegoose/typegoose").Ref<import("../movie/movie.model").MovieModel, Types.ObjectId>[]>;
+    getFavorites(_id: string): Promise<any[]>;
     toggleFavorite(movieId: Types.ObjectId, user: UserModel): Promise<void>;
     getCountUsers(): Promise<number>;
     getUsers(searchTerm?: string): Promise<(import("mongoose").Document<Types.ObjectId, import("@typegoose/typegoose/lib/types").BeAnObject, UserModel> & UserModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{

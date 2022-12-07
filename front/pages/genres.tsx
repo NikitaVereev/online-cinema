@@ -19,11 +19,11 @@ const DiscoveryPage: NextPage<{ collections: ICollection[] }> = ({
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const { data: discovery } = await GenreService.getDiscovery()
+		const { data: collections } = await GenreService.getDiscovery()
 
 		return {
 			props: {
-				discovery,
+				collections,
 			},
 		}
 	} catch (error) {

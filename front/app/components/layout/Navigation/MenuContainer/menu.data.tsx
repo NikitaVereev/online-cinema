@@ -24,6 +24,11 @@ export const firstMenu: IMenu = {
 			title: 'Популярные',
 			link: '/trending',
 		},
+		{
+			icon: 'MdRefresh',
+			title: 'Какие-то приколы',
+			link: '/prank',
+		},
 	],
 }
 

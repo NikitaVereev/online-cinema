@@ -48,18 +48,15 @@ export class GenreService {
 		const collections = await Promise.all(
 			genres.map(async (genre) => {
 				const moviesByGenre = await this.movieService.byGenres([genre._id])
-
 				const result: ICollection = {
 					_id: String(genre._id),
 					image: moviesByGenre[0].bigPoster,
 					slug: genre.slug,
 					title: genre.name,
 				}
-
 				return result
 			}),
 		)
-
 		return collections
 	}
 
