@@ -10,11 +10,6 @@ import FavoriteButton from '../single-movie/FavoriteButton/FavoritBurron'
 
 import styles from './Favorites.module.sass'
 
-interface IFavoriteItem extends Omit<IGalleryItem, 'content'> {
-	title: string
-	_id: string
-}
-
 const FavoritesItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.itemWrapper}>

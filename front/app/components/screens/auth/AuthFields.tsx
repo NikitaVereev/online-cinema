@@ -27,6 +27,7 @@ const AuthFields: FC<IAuthFields> = ({
 					},
 				})}
 				placeholder="E-mail"
+				//@ts-ignore
 				error={errors.email}
 			/>
 			<Field
@@ -44,6 +45,7 @@ const AuthFields: FC<IAuthFields> = ({
 				)}
 				placeholder="Password"
 				type="password"
+				//@ts-ignore
 				error={errors.password}
 			/>
 		</>

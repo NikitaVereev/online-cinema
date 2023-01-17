@@ -104,6 +104,7 @@ const MovieEdit: FC = () => {
 								render={({ field, fieldState: { error } }) => (
 									<DynamicSelect
 										field={field}
+										//@ts-ignore
 										options={genres || {}}
 										isLoading={isGenresLoading}
 										isMulti
@@ -121,6 +122,7 @@ const MovieEdit: FC = () => {
 								render={({ field, fieldState: { error } }) => (
 									<DynamicSelect
 										field={field}
+										//@ts-ignore
 										options={actors || {}}
 										isLoading={isActorsLoading}
 										isMulti

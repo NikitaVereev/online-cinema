@@ -18,7 +18,7 @@ import actorStyles from './Actor.module.sass'
 interface IActorPage {
 	movies: IMovie[]
 	title: string
-	description: string
+	description?: string
 	actor: IActor
 }
 

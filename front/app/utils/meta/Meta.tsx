@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import React, { FC } from 'react'
 
 import { siteName, titleMerge } from '@/config/seo.config'
 
