@@ -6,7 +6,11 @@ import { accessColor } from '@/config/constants'
 
 import Favicons from './Favicons'
 
-const HeadProvider: FC = ({ children }) => {
+type IType = {
+	children?: React.ReactNode
+}
+
+const HeadProvider: FC<IType> = ({ children }) => {
 	return (
 		<>
 			<NextProgressBar

@@ -5,7 +5,11 @@ import styles from './Layout.module.sass'
 import Navigation from './Navigation/Navigation'
 import Sidebar from './Sidebar/Sidebar'
 
-const Layout: FC = ({ children }: any) => {
+type IType = {
+	children?: React.ReactNode
+}
+
+const Layout: FC<IType> = ({ children }) => {
 	const [open, setOpen] = useState(true)
 
 	return (
